@@ -56,7 +56,7 @@ const ProfileBody = () => {
                             </div>
                             <div className="mb-2 text-gray-700 mt-10">
                                 <i className="fas fa-briefcase mr-2 text-lg text-gray-500"></i>
-                                    Somebody pitty hire me
+                                    Ironhacks
                             </div>
                                 <div className="mb-2 text-gray-700">
                                     <i className="fas fa-university mr-2 text-lg text-gray-500"></i>

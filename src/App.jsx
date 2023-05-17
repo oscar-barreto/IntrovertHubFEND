@@ -5,8 +5,8 @@ import { Error } from "./pages/Error";
 import { Home } from "./pages/Home";
 import {Login} from "./pages/Login/Login.jsx";
 import {Profile} from "./pages/Profile/Profile.jsx";
+import {Signup} from "./pages/Signup/Signup.jsx"
 
-import { Signup } from "./pages/Signup";
 
 function App() {
   return (

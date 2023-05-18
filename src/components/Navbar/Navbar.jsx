@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -66,15 +67,12 @@ export default function Navbar(props) {
               </a>
             </li>
             <li className="flex items-center">
-              <a
-                className={
+             <Link to={'/posts'} className={
                   (props.transparent
                     ? "lg:text-white lg:hover:text-gray-300 text-gray-800"
                     : "text-gray-800 hover:text-gray-600") +
                   " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
-                }
-                href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/landing"
-              >
+                }>
                 <i
                   className={
                     (props.transparent
@@ -84,7 +82,7 @@ export default function Navbar(props) {
                   }
                 />{" "}
                 Posts
-              </a>
+                </Link>
             </li>
           </ul>
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">

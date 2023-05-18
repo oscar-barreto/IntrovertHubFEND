@@ -27,7 +27,7 @@ const ProfileBody = () => {
                     <div className="px-6">
                         <div className="flex flex-wrap justify-center">
                         <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
-                            <div className="flex relative">
+                            <div className="relative">
                                             {/* <img src={alelindo} alt="" className=" shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16" style={{ maxWidth: "150px" }}/>
                                             <img alt='...' src={require("../../assets/images/alelindo.jpeg").default}/> */}
                                             <img
@@ -73,7 +73,7 @@ const ProfileBody = () => {
                                 <div className="flex flex-wrap justify-center">
                                     <div className="w-full lg:w-9/12 px-4">
                                     <p className="mb-4 text-lg leading-relaxed text-gray-800">Tell the world how you feel</p>
-                                        <Link to={'#'}>Posts</Link>
+                                        <Link to={'/posts'}>Posts</Link>
                                     </div> 
                                 </div>
                             </div>

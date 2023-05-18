@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { AuthRouteProtector } from "./components/AuthRouteProtector";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Error } from "./pages/Error";
-import { Home } from "./pages/Home";
+import { Home } from "./pages/Home/Home";
 import {Login} from "./pages/Login/Login.jsx";
 import {Profile} from "./pages/Profile/Profile.jsx";
 import {Signup} from "./pages/Signup/Signup.jsx"

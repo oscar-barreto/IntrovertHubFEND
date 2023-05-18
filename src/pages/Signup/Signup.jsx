@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
 import { Login } from "../Login/Login";
+import { Link } from "react-router-dom";
 
 // export function Signup() {
 //   const navigate = useNavigate();
@@ -201,12 +202,7 @@ export function Signup() {
                 <p className="mt-8 text-xs font-light text-center text-gray-700">
                     {" "}
                     Already have an account?{" "}
-                    <a
-                        href="#"
-                        className="font-medium text-purple-600 hover:underline"
-                    >
-                        Log In
-                    </a>
+                    <Link className="text-purple-700" to="/login" >Log In</Link>
                 </p>
             </div>
         </div>

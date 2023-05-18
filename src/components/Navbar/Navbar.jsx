@@ -83,7 +83,7 @@ export default function Navbar(props) {
                     " far fa-file-alt text-lg leading-lg mr-2"
                   }
                 />{" "}
-                Photos
+                Posts
               </a>
             </li>
           </ul>

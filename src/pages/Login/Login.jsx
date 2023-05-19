@@ -12,45 +12,30 @@ export function Login() {
     password: "",
   });
 
-  // const navigate = useNavigate();
+  const {setLoggedInUser} = useContext(AuthContext);
 
-  // const { setLoggedInUser } = useContext(AuthContext);
+
+  const navigate = useNavigate();
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(){
+  
+  async function handleSubmit(e) {
+    e.preventDefault();
+
     try {
-        e.preventDefault(e)
-        const response = await api.post("/api/user/login", form);
+      const response = await api.post("api/user/login", form);
+      setLoggedInUser({ ...response.data });
 
-        localStorage.setItem("loggedInUser", JSON.stringify(response.data));
+      localStorage.setItem("loggedInUser", JSON.stringify(response.data));
 
-        console.log(response.data)
-        
-    } catch (e) {
-        console.error(e);
-
+      navigate("/profile");
+    } catch (error) {
+      console.log(error);
     }
   }
-
-
- 
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-
-  //   try {
-  //     const response = await api.post("/user/login", form);
-  //     setLoggedInUser({ ...response.data });
-
-  //     localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-
-  //     navigate("/profile");
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
 
   return (
   <div className="bg-slate-900">
@@ -64,13 +49,21 @@ export function Login() {
                         <label for="email" className="block text-sm font-semibold text-gray-800">
                             Email
                         </label>
-                        <input type="email" required="true" name="email" onChange={handleChange} value={form.email} className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"/>
+                        <input type="email"
+                            required={true}
+                            name="email"
+                            onChange={handleChange}
+                            value={form.email} className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"/>
                     </div>
                     <div className="mb-2">
                         <label for="password" className="block text-sm font-semibold text-gray-800" pattern="/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/gm">
                             Password
                         </label>
-                        <input type="password" required="true" name="password" onChange={handleChange} value={form.password} className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"/>
+                        <input type="password"
+                            name="password"
+                            onChange={handleChange}
+                            value={form.password}
+                            required={true} className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"/>
                     </div>
                     <div className="mt-6">
                         <button onSubmit={handleSubmit} className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">

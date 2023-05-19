@@ -1,6 +1,8 @@
 import React from 'react';
 import alelindo from "../../assets/images/alelindo.jpeg"
 import { Link } from 'react-router-dom';
+import { api } from "../../api/api";
+import { AuthContext } from "../../contexts/authContext";
 
 const ProfileBody = () => {
   return (
